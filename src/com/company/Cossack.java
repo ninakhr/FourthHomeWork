@@ -1,6 +1,6 @@
 package com.company;
 
-public class Cossack extends Warrior {
+public class Cossack extends Warrior implements Trainee{
     Saber saber;
 
     public Cossack(int hitPoints, int level, int damage, int damageMultiplier, Saber saber) {
@@ -16,5 +16,11 @@ public class Cossack extends Warrior {
     public void info(){
         super.info();
         System.out.println("I'm a Kozachek and I have a nice " + this.saber + ".");
+    }
+
+    @Override
+    public void train() {
+        System.out.println("I'm training");
+        setLevel(getLevel() + 1);
     }
 }
