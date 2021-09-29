@@ -1,7 +1,7 @@
-package com.company;
+package com.company.character;
 
-public class Hero {
-    private int hitPoints;
+public abstract class Hero implements Informational{
+    int hitPoints;
     private int level;
     private int damage;
 

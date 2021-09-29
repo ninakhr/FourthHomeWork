@@ -1,32 +1,16 @@
-package com.company;
+package com.company.character;
 
-public class Beast {
+import com.company.character.Hero;
+import com.company.character.Informational;
+
+public class Beast implements Informational {
     private String name;
     private int hitPoints;
     private int damage;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getHitPoints() {
-        return hitPoints;
-    }
-
-    public void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
+    @Override
+    public void info() {
+        System.out.println("I'm " + this.name);
     }
 
     public Beast(String name, int hitPoints, int damage) {
@@ -34,6 +18,13 @@ public class Beast {
         this.hitPoints = hitPoints;
         this.damage = damage;
     }
+
+    public Beast(String name, int hitPoints) {
+        this.name = name;
+        this.hitPoints = hitPoints;
+        System.out.println("I can't damage you.");
+    }
+
 
     final void attackLikeABeast (Hero hero){
         hero.setHitPoints(hero.getHitPoints() - this.damage);

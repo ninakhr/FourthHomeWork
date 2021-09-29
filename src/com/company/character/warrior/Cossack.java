@@ -1,6 +1,9 @@
-package com.company;
+package com.company.character.warrior;
 
-public class Cossack extends Warrior implements Trainee{
+import com.company.character.warrior.Warrior;
+import com.company.weapon.Saber;
+
+public class Cossack extends Warrior {
     Saber saber;
 
     public Cossack(int hitPoints, int level, int damage, int damageMultiplier, Saber saber) {
@@ -22,5 +25,10 @@ public class Cossack extends Warrior implements Trainee{
     public void train() {
         System.out.println("I'm training");
         setLevel(getLevel() + 1);
+    }
+
+    @Override
+    void punch(int damageMultiplier, int damage) {
+        super.punch(damageMultiplier, damage);
     }
 }

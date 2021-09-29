@@ -1,6 +1,11 @@
-package com.company;
+package com.company.weapon;
 
-public class Sword {
+import com.company.character.Hero;
+import com.company.character.magician.Magician;
+
+import java.time.chrono.HijrahEra;
+
+public class Sword implements Damaging {
     private String name;
     private int damage;
 
@@ -23,5 +28,11 @@ public class Sword {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+
+    @Override
+    public void causeDamage(Hero hero) {
+        hero.setHitPoints(hero.getHitPoints() - this.damage);
     }
 }
